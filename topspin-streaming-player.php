@@ -205,7 +205,7 @@ class Topspin_Streaming_Player_Widget extends WP_Widget {
 add_action('widgets_init', create_function('', 'return register_widget("Topspin_Streaming_Player_Widget");'));
 
 // Create an admin page for the plugin under the Settings tab in WP
-
+//
 
 /**
  * Function: Registers the admin page
@@ -232,39 +232,80 @@ function topspin_streaming_player_plugin_admin_options_page() {
     $stylesheet = TS_STREAMING_PLAYER_PLUGIN_PATH . '/topspin-player-v2.css';
 
     // Save submitted options.
-    echo isset($_POST['ts-streaming-player-v2-styles']) ? 'yes' : 'no';
     if ( isset($_POST['ts-streaming-player-v2-styles']) ) {
         if ( is_writable($stylesheet) ) {
-            file_put_contents($stylesheet, $_POST['ts-streaming-player-v2-styles']);
-        }   
+            $success = file_put_contents($stylesheet, $_POST['ts-streaming-player-v2-styles']);
+        }
+        if ( $success !== FALSE ) { 
+            echo '<div class="updated"><p><strong>Setting updated.</strong></p></div>';
+        } else { echo '<div class="error"><p><strong>Something went wrong while updating the settings.</strong></p></div>'; }   
     }
 
     // Build options form.
     $content = '<div class="wrap">';
+    
     $content .= get_screen_icon();
-    $content .= '<h2>' . __('Topspin Streaming Player Plugin Settings') . '</h2>';
-    $content .= '<p>';
-    $content .= '<form method="post">';
+    $content .= '<h2>' . __('Topspin Streaming Player Plugin Configuration') . '</h2>';
+    $content .= '<div class="metabox-holder">';
 
-        // Stylesheet for v2 player
-        $content .= '<label for="ts-streaming-player-v2-styles">Custom CSS for Topspin Streaming Player Version 2</label><br/>';
-        $content .= '<textarea name="ts-streaming-player-v2-styles" style="width:75%; height:250px;" ';
-            $content .= is_writable($stylesheet) ? '>' : 'disabled="true">';
-            $content .= file_get_contents($stylesheet);
-        $content .= '</textarea>';
-        $content .= is_writable($stylesheet) ? '' : '<em>This file is not writable.</em>';
+    // Main box for settings
+    $content .= '<div class="postbox-container" style="width: 75%">';
+        $content .= '<form method="post">';
+            // Stylesheet for v2 player
+            $content .= '<div class="postbox">';
+                $content .= '<div class="handlediv" title="Click to toggle"><br></div>';
+                $content .= '<h3 class="hndle"><span>Topspin Streaming Player Version 2 Settings</span></h3>';
+                $content .= '<div class="inside">';
+                    $content .= '<table class="form-table"><tbody>';
+                        $content .= '<tr valign="top">';
+                        $content .= '<td>';
+                            $content .= '<b>Streaming Player V2 Styles:</b><br/>';
+                            $content .= '<textarea name="ts-streaming-player-v2-styles" style="width:100%; height:250px;" ';
+                            $content .= is_writable($stylesheet) ? '>' : 'disabled="true">';
+                            $content .= file_get_contents($stylesheet);
+                            $content .= '</textarea>';
+                            $content .= is_writable($stylesheet) ? '' : '<em>This file is not writable.</em>';
+                        $content .= '</td>';
+                        $content .= '</tr>';
+                    $content .= '</tbody></table>';                
+                $content .= '</div>';
+            $content .= '</div>';
+            // Submit button
+            $content .= '<p class="submit">';
+            $content .= '<input type="submit" name="submit" value="' . __('Update Options') . '&raquo;" />';
+            $content .= '</p>';
+        $content .= '</form>';          
+    $content .= '</div><!-- .postbox-container -->';
 
-        // Submit button
-        $content .= '<p class="submit">';
-        $content .= '<input type="submit" name="submit" value="' . __('Update Options') . '&raquo;" />';
-        $content .= '</p>';
-
-    $content .= '</form>';      
-    $content .= '</p>';
-    $content .= '</div>';
+    $content .= '<div class="postbox-container side" style="width:20%; margin-left:10px;">';
+        $content .= '<div id="donate" class="postbox">';
+        $content .= '<div class="handlediv" title="Click to toggle"><br></div>';
+        $content .= '<h3 class="hndle"><span><strong class="red">Donate</strong></span></h3>';
+        $content .= '<div class="inside">';
+            $content .= '<p><strong>';
+            $content .= 'Want to help make this plugin even better? Donations help pay for development time, so donate $5, $10, or $20 now!';
+            $content .= '</strong></p>';
+                $content .= '<form style="width:160px;margin:0 auto;" action="https://www.paypal.com/cgi-bin/webscr" method="post">';
+                $content .= '<input type="hidden" name="cmd" value="_s-xclick">';
+                $content .= '<input type="hidden" name="hosted_button_id" value="CDV95SG2YQXXY">';
+                $content .= '<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">';
+                $content .= '<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">';
+                $content .= '</form>';
+        $content .= '</div>';
+    $content .= '</div><!-- .postbox-container .side -->';
+    
+    $content .= '</div><!-- .metabox-holder -->';
+    $content .= '</div><!-- .wrap -->';
 
     // Output
     echo $content;
 }
+
+function topspin_streaming_player_options_page_scripts() {
+    wp_enqueue_script('dashboard');
+    wp_enqueue_script('postbox');
+}
+add_action( 'admin_print_scripts', 'topspin_streaming_player_options_page_scripts' );
+
 
 ?>
