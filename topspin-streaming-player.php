@@ -69,7 +69,7 @@ class Topspin_Streaming_Player_Widget extends WP_Widget {
                 $content = '<iframe id="tsFrame' . $player_id . '" '; 
                 $content .= 'src="http://cdn.topspin.net/api/' . $version . '/widget/player/' . $player_id;
                 if ( $use_custom_css ) {
-                    $content .= '?css=' . TS_STREAMING_PLAYER_PLUGIN_URL . '/topspin-player-v2-styles.css';
+                    $content .= '?css=' . TS_STREAMING_PLAYER_PLUGIN_URL . '/topspin-player-v2.css';
                 }
                 $content .= '" width="' . $width . '" height="' . $height . '" frameborder="0"></iframe>';
                 break;
