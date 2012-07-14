@@ -1,0 +1,19 @@
+.tsPlayer_cta_wrapper {
+	display:none;
+}
+
+.tsPlayer_share_wrapper {
+	display: none;
+}
+
+.tsPlayer_data_track p {
+	font-family: helvetica, sans-serif;
+}
+
+.tsPlayer_data_wrapper {
+	opacity: 0.8 !important;
+}
+
+.tsPlayer_playlist_wrapper {
+	border:0;
+}
