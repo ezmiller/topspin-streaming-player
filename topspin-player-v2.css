@@ -1,19 +1,166 @@
-.tsPlayer_cta_wrapper {
-	display:none;
-}
+/*****************************************/
+/* Styles for the Call to Action Buttons */
+/*****************************************/
 
-.tsPlayer_share_wrapper {
-	display: none;
-}
+/* Wraps the entire CTA. */
+.tsPlayer_cta_wrapper {}
 
-.tsPlayer_data_track p {
-	font-family: helvetica, sans-serif;
-}
+/* Positions CTA when sharing is true. */
+.tsPlayer_cta_sharing_true {}
 
-.tsPlayer_data_wrapper {
-	opacity: 0.8 !important;
-}
+/* Positions CTA when sharing is false. */
+.tsPlayer_cta_sharing_false {}
 
-.tsPlayer_playlist_wrapper {
-	border:0;
-}
+/* Default link text colour for CTA text. */
+.tsPlayer_cta_wrapper a {}
+
+/* Alternate link text colour. */
+.tsPlayer_cta_wrapper a:link, .tsPlayer_cta_wrapper a:active, .tsPlayer_cta_wrapper a:visited {}
+
+/* Link text colour when cursor hovers over text. */
+.tsPlayer_cta_wrapper a:hover {}
+
+/* Text container. */
+.tsPlayer_cta_wrapper h2 {}
+
+/* Span within text} container (used to calculate width). */
+.tsPlayer_cta_wrapper h2 span {}
+
+/* Left side of button. */
+.tsPlayer_cta_button_left {} 
+
+/* Hover state for left side of button. */
+.tsPlayer_cta_wrapper:hover .tsPlayer_cta_button_left {}
+
+/* Middle of button. */
+.tsPlayer_cta_button_middle {}
+
+/* Hover state for middle of button. */ 
+.tsPlayer_cta_wrapper:hover .tsPlayer_cta_button_middle {}
+
+/* Right side of button. */
+.tsPlayer_cta_button_right {}
+
+/* Hover state for right side of button. */
+.tsPlayer_cta_wrapper:hover .tsPlayer_cta_button_right {}
+
+/*************************/
+/* Styles for Track Data */
+/*************************/
+
+/* Wraps the current track title, artist name and playlist button. */
+.tsPlayer_data_wrapper {}
+
+/* Contains the track title and artist name. */
+.tsPlayer_data_track {}
+
+/* Text for track title and artist name. */
+.tsPlayer_data_track p {}
+
+/* Contains playlist text and button. */
+.tsPlayer_data_playlist {}
+
+/* Text for playlist button. */
+.tsPlayer_data_playlist p {}
+
+/* Image for playlist button (closed). */
+.tsPlayer_data_playlist span {}
+
+/* Image for playlist button (open). */
+.tsPlayer_data_playlist_open span {}
+
+
+/**********************************/
+/* Styles for Playlist Track Data */
+/**********************************/
+
+/* Wraps entire playlist. */
+.tsPlayer_playlist_wrapper {}
+
+/* Contains playlist items. */
+.tsPlayer_playlist {}
+
+/* Individual playlist item container. */
+.tsPlayer_playlist_item {}
+
+/* Hover state for playlist item. */
+.tsPlayer_playlist_item:hover {}
+
+/* Additional selector for even items. */
+.tsPlayer_playlist_item_even {}
+
+/* Additional selector for odd items. */
+.tsPlayer_playlist_item_odd {}
+
+/* Playlist text. */
+.tsPlayer_playlist_item p {}
+
+/* Item number container. */
+.tsPlayer_playlist_item_index {}
+
+/* Span for item number text. */
+.tsPlayer_playlist_item_index span {}
+
+/* Item title container. */
+.tsPlayer_playlist_item_title {}
+
+/* Span for item title text. */
+.tsPlayer_playlist_item_title span {}
+
+/* Scrollbar wrapper. */ 
+.tsPlayer_scrollbar_wrapper {}
+
+/* Scrollbar. */
+.tsPlayer_scrollbar {}
+
+/* Scrollbar "guide". */
+.tsPlayer_scrollbar_guide {}
+
+/* Handle for scrollbar. */ 
+.ui-slider-handle {} 
+
+/******************************/
+/* Styles for Sharing Buttons */
+/******************************/
+
+/* Share button container. */
+.tsPlayer_share {}
+
+/* Hover state for share button. */
+.tsPlayer_share:hover {}
+
+/* Span within share button. */
+.tsPlayer_share span {}
+
+/* Embed button container. */
+.tsPlayer_share_embed {}
+
+/* Embed button image. */
+.tsPlayer_share_embed span {}
+
+/* Hover state for embed button image. */
+.tsPlayer_share_embed.hover span {}
+
+/* Embed notifier (fades in next to embed button when embed is copied) */
+.tsPlayer_share_embed_notify {}
+
+/* Text for embed notifier. */
+.tsPlayer_share_embed_notify p {}
+
+/* Facebook button container. */
+.tsPlayer_share_facebook {}
+
+/* Span within Facebook container. */
+.tsPlayer_share_facebook span {}
+
+/* Hover state for Facebook span. */
+.tsPlayer_share_facebook span:hover {}
+
+/* Twitter button container. */
+.tsPlayer_share_twitter {}
+
+/* Span within Twitter container. */
+.tsPlayer_share_twitter span {}
+
+/* Hover state for Twitter span. */
+.tsPlayer_share_twitter span:hover {}
