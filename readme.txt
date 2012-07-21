@@ -1,25 +1,25 @@
 === Topspin Streaming Player ===
 
   Contributors: fraxture
-  Donate link: http://screen-cuts.com/donate  
-  Tags: Topspin,music,streaming player   
+  Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CDV95SG2YQXXY  
+  Tags: Topspin,music,streaming player, widget  
   Tested up to: 3.4.1  
   Stable tag: 3.3.4.1  
   Requires at least: 3.0.2  
 
 == Description ==
 
-## Description
+## **Description**
 
-  Topspin Streaming Player is a wordpress plugin that provides a widget that outputs a Topspin streaming player.
+  Topspin Streaming Player provides a widget for displaying a a Topspin streaming player in the widget areas of your site.
 
-## Live Examples
+## **Live Examples**
 
   [http://okgo.net](http://okgo.net/) - Streaming player widget used on the front page.
 
 == Installation == 
 
-## Installing the Plugin
+## **Installing the Plugin**
 
   1. First, this plugin is designed to work with Topspin, so you'll need a topspin account. Visit [topspinmedia.com](http://topspinmedia.com) to open an account.
 
@@ -28,7 +28,7 @@
 
   3. Active the plugin in the Wordpress Plugins Dashboard.
 
-## Using the Topspin Streaming Player Widget
+## **Using the Topspin Streaming Player Widget**
 
   1. Activate Widget
 
